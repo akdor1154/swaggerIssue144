@@ -1,0 +1,36 @@
+swagger: '2.0'
+info:
+  title: Swagger Issue \#144
+  version: v1
+consumes: 
+  - 'application/json'
+produces: 
+  - 'application/json'
+
+paths:
+  /test:
+    get:
+      responses:
+        200:
+          description: a route which returns objects that validate against an allOf schema
+          schema:
+            allOf:
+              - type: object
+                properties:
+                  a:
+                    type: number
+                required: [a]
+              - type: object
+                properties:
+                  b:
+                    type: number
+                required: [b]
+  /test2:
+    get:
+      responses:
+        200:
+          description: a route which returns objects that validate against an allOf schema
+          schema:
+            type: object
+            properties:
+              prop: { type: string }
