@@ -14,6 +14,7 @@ paths:
         200:
           description: a route which returns objects that validate against an allOf schema
           schema:
+            # type: object # if you uncomment this, the schema validates correctly. If I understand JSON Schema correctly though, this should not be required.
             allOf:
               - type: object
                 properties:
